@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <header class="header">
+        <h1>Сalendar of events</h1>
+      </header>
+      <form class="calendar">
+        <ul class="calendar__months">
+          <div class="calendar__months-row">
+            <li class="calendar__month" data-value="january">January</li>
+            <li class="calendar__month" data-value="february">February</li>
+            <li class="calendar__month" data-value="march">March</li>
+          </div>
+          <div class="calendar__months-row">
+            <li class="calendar__month" data-value="april">April</li>
+            <li class="calendar__month" data-value="may">May</li>
+            <li class="calendar__month" data-value="june">June</li>
+          </div>
+          <div class="calendar__months-row">
+            <li class="calendar__month" data-value="july">July</li>
+            <li class="calendar__month" data-value="august">August</li>
+            <li class="calendar__month" data-value="september">September</li>
+          </div>
+          <div class="calendar__months-row">
+            <li class="calendar__month" data-value="october">October</li>
+            <li class="calendar__month" data-value="november">November</li>
+            <li class="calendar__month" data-value="december">December</li>
+          </div>
+        </ul>
+      </form>
+      <div class="events">
+        <ul class="events__list">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="./scripts.js"></script>
+</body>
+</html>
