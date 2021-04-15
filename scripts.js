@@ -1,7 +1,7 @@
 const month = document.querySelectorAll(".calendar__month");
 const eventsList = document.querySelector(".events__list");
 // в данный пустой url нужно вписать адрес сервера, на который пойдет запрос
-let url = "";
+let url = "https://spyrix.net/get-data.php";
 
 // вспомогательная переменная, в которой хранится активный месяц
 let currentMonthActive = "";
@@ -19,17 +19,19 @@ month.forEach(currentMonth => {
     })
 
     currentMonthActive.classList.add("active")
-
-    requestData();
+    requestData(currentMonthActive.dataset.value);
   })
 });
 
-function requestData() {
+function requestData(monthPayload) {
+  let formData = new FormData()
+
+  formData.append('month', monthPayload)
   const xhr = new XMLHttpRequest();
 
   if (url !== "") {
     xhr.open('POST', url);
-    xhr.send(month.value);
+    xhr.send(formData);
     xhr.responseType = 'json';
   } else {
     xhr.open("GET", "events.json");
@@ -39,7 +41,7 @@ function requestData() {
     if (xhr.status >= 400) {
         console.log('Error');
     } else {
-      const response = JSON.parse(xhr.responseText);
+      const response = url === "" ? JSON.parse(xhr.responseText) : xhr.response;
       createEventsDOM(response);
     }
   });
@@ -94,5 +96,3 @@ function requestData() {
       });
     return currentEvents;
   }
-
-
