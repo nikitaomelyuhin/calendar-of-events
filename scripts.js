@@ -60,7 +60,7 @@ function requestData(monthPayload) {
       const liItem = document.createElement("li");
       liItem.classList.add("events__item-text");
       eventsList.append(liItem)
-      liItem.innerHTML = "No events this month..."
+      liItem.innerHTML = "No events this month...."
     }
 
     currentEvents.forEach(event => {
