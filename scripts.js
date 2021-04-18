@@ -1,7 +1,7 @@
 const month = document.querySelectorAll(".calendar__month");
 const eventsList = document.querySelector(".events__list");
 // в данный пустой url нужно вписать адрес сервера, на который пойдет запрос
-let url = "https://spyrix.net/get-data.php";
+let url = "";
 
 // вспомогательная переменная, в которой хранится активный месяц
 let currentMonthActive = "";
